@@ -1,0 +1,41 @@
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "x11 b12 x13 b21 b22 b23 o31 b32 o33 turn_o"
+x b x 
+b b b 
+o b o 
+move_o32_can_win
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "x11 b12 x13 b21 b22 b23 o31 b32 o33 turn_x"
+x b x 
+b b b 
+o b o 
+move_x12_can_win
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "x11 b12 x13 b21 b22 b23 b31 b32 o33 turn_o"
+x b x 
+b b b 
+b b o 
+move_o12_force
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "o11 b12 b13 o21 b22 x23 x31 b32 b33 turn_x"
+o b b 
+o b x 
+x b b 
+move_x22_setup
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "o11 b12 b13 o21 x22 x23 x31 b32 b33 turn_x"
+o b b 
+o x x 
+x b b 
+move_x13_can_win
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "o11 b12 b13 o21 o22 x23 x31 b32 b33 turn_x"
+o b b 
+o o x 
+x b b 
+move_x33_force
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "o11 b12 x13 o21 o22 x23 x31 b32 b33 turn_x"
+o b x 
+o o x 
+x b b 
+move_x33_can_win
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ ./fc -a rules.kb -b "b11 b12 x13 o21 x22 o23 b31 b32 o33 turn_x"
+b b x 
+o x o 
+b b o 
+move_x31_can_win
+clayton@ubuntu-linux:/media/psf/Home/OneDrive/Documents/College/TAMU/Fall-2016/CSCE-420/Project Four$ 

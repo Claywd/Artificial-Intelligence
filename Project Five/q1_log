@@ -1,0 +1,40 @@
+?- [q1].
+true.
+
+?- brother(lisa,bart).
+true.
+
+?- brother(rod,tod).
+true.
+
+?- sister(marge,patty).
+true.
+
+?- sister(bart,X).
+X = lisa .
+
+?- aunt(lisa,patty).
+true.
+
+?- uncle(bart,X).
+X = herb.
+
+?- grandfather(maggie,abraham).
+true.
+
+?- granddaughter(jackie,lisa).
+true.
+
+?- relative(lisa,selma).
+true .
+
+?- ancestor(jackie,bart).
+true.
+
+?- unrelated(bart,smithers).
+true .
+
+?- unrelated(tod,bart).
+true .
+
+?- 

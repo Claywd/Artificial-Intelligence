@@ -1,0 +1,471 @@
+
+# x will be the curent players turn
+# o will be the opposite players turn
+# winA means the current player wins
+# winB means the opposite player wins
+# gameEnd means the game is over
+
+
+
+
+###### Can WIN
+#top x
+x11 b12 x13 turn_x move_x12_can_win
+b11 x12 x13 turn_x move_x11_can_win
+x11 x12 b13 turn_x move_x13_can_win
+
+#middle row x
+x21 b22 x23 turn_x move_x22_can_win
+b21 x22 x23 turn_x move_x21_can_win
+x21 x22 b23 turn_x move_x23_can_win
+
+#bottom middle row
+x31 b32 x33 turn_x move_x32_can_win
+b31 x32 x33 turn_x move_x31_can_win
+x31 x32 b33 turn_x move_x33_can_win
+
+#left column
+x11 b21 x31 turn_x move_x21_can_win
+b11 x21 x31 turn_x move_x11_can_win
+x11 x21 b31 turn_x move_x31_can_win
+
+#middle column
+x12 b22 x32 turn_x move_x22_can_win
+b12 x22 x32 turn_x move_x12_can_win
+x12 x22 b32 turn_x move_x32_can_win
+
+#right column
+x13 b23 x33 turn_x move_x23_can_win
+b13 x23 x33 turn_x move_x13_can_win
+x13 x23 b33 turn_x move_x33_can_win
+
+#left right diagonal
+x11 b22 x33 turn_x move_x22_can_win
+b11 x22 x33 turn_x move_x11_can_win
+x11 x22 b33 turn_x move_x33_can_win
+
+#right left diagonal
+x13 b22 x31 turn_x move_x22_can_win
+b13 x22 x31 turn_x move_x13_can_win
+x13 x22 b31 turn_x move_x31_can_win
+
+#top x
+x11 x12 x13 turn_o x_won
+x11 x12 x13 turn_o x_won
+x11 x12 x13 turn_o x_won
+
+#middle row x
+x21 x22 x23 turn_o x_won
+x21 x22 x23 turn_o x_won
+x21 x22 x23 turn_o x_won
+
+#xottom middle row
+x31 x32 x33 turn_o x_won
+x31 x32 x33 turn_o x_won
+x31 x32 x33 turn_o x_won
+
+#left column
+x11 x21 x31 turn_o x_won
+x11 x21 x31 turn_o x_won
+x11 x21 x31 turn_o x_won
+
+#middle column
+x12 x22 x32 turn_o x_won
+x12 x22 x32 turn_o x_won
+x12 x22 x32 turn_o x_won
+
+#right column
+x13 x23 x33 turn_o x_won
+x13 x23 x33 turn_o x_won
+x13 x23 x33 turn_o x_won
+
+#left right diagonal
+x11 x22 x33 turn_o x_won
+x11 x22 x33 turn_o x_won
+x11 x22 x33 turn_o x_won
+
+#right left diagonal
+x13 x22 x31 turn_o x_won
+x13 x22 x31 turn_o x_won
+x13 x22 x31 turn_o x_won
+
+############Force
+o11 b12 o13 turn_x move_x12_force
+b11 o12 o13 turn_x move_x11_force
+o11 o12 b13 turn_x move_x13_force
+
+#middle row o
+o21 b22 o23 turn_x move_x22_force
+b21 o22 o23 turn_x move_x21_force
+o21 o22 b23 turn_x move_x23_force
+
+#bottom middle row
+o31 b32 o33 turn_x move_x32_force
+b31 o32 o33 turn_x move_x31_force
+o31 o32 b33 turn_x move_x33_force
+
+#left column
+o11 b21 o31 turn_x move_x21_force
+b11 o21 o31 turn_x move_x11_force
+o11 o21 b31 turn_x move_x31_force
+
+#middle column
+o12 b22 o32 turn_x move_x22_force
+b12 o22 o32 turn_x move_x12_force
+o12 o22 b32 turn_x move_x32_force
+
+#right column
+o13 b23 o33 turn_x move_x23_force
+b13 o23 o33 turn_x move_x13_force
+o13 o23 b33 turn_x move_x33_force
+
+#left right diagonal
+o11 b22 o33 turn_x move_x22_force
+b11 o22 o33 turn_x move_x11_force
+o11 o22 b33 turn_x move_x33_force
+
+#right left diagonal
+o13 b22 o31 turn_x move_x22_force
+b13 o22 o31 turn_x move_x13_force
+o13 o22 b31 turn_x move_x31_force
+
+#######setup
+
+x11 x12 b21 turn_x move_x21_setup
+x11 b12 x21 turn_x move_x12_setup
+b11 x12 x21 turn_x move_x11_setup
+x11 x12 b22 turn_x move_x22_setup
+x11 b12 x22 turn_x move_x12_setup
+b11 x12 x22 turn_x move_x11_setup
+x11 x21 b22 turn_x move_x22_setup
+x11 b21 x22 turn_x move_x21_setup
+b11 x21 x22 turn_x move_x11_setup
+
+x13 x12 b21 turn_x move_x21_setup
+x13 b12 x21 turn_x move_x12_setup
+b13 x12 x21 turn_x move_x13_setup
+x13 x12 b22 turn_x move_x22_setup
+x13 b12 x22 turn_x move_x12_setup
+b13 x12 x22 turn_x move_x13_setup
+x13 x23 b22 turn_x move_x22_setup
+x13 b23 x22 turn_x move_x23_setup
+b13 x23 x22 turn_x move_x13_setup
+
+x31 x32 b21 turn_x move_x21_setup
+x31 b32 x21 turn_x move_x32_setup
+b31 x32 x21 turn_x move_x31_setup
+x31 x32 b22 turn_x move_x22_setup
+x31 b32 x22 turn_x move_x32_setup
+b31 x32 x22 turn_x move_x31_setup
+x31 x21 b22 turn_x move_x22_setup
+x31 b21 x22 turn_x move_x21_setup
+b31 x21 x22 turn_x move_x31_setup
+
+x31 x32 b21 turn_x move_x21_setup
+x31 b32 x21 turn_x move_x32_setup
+b31 x32 x21 turn_x move_x31_setup
+x31 x32 b22 turn_x move_x22_setup
+x31 b32 x22 turn_x move_x32_setup
+b31 x32 x22 turn_x move_x31_setup
+x31 x23 b22 turn_x move_x22_setup
+x31 b23 x22 turn_x move_x23_setup
+b31 x23 x22 turn_x move_x31_setup
+
+x31 x23 b22 turn_x move_x22_setup
+x31 b23 x22 turn_x move_x23_setup
+b31 x23 x22 turn_x move_x31_setup
+
+x13 x23 b22 turn_x move_x22_setup
+x13 b23 x22 turn_x move_x23_setup
+b13 x23 x22 turn_x move_x13_setup
+
+x33 x23 b22 turn_x move_x22_setup
+x33 b23 x22 turn_x move_x23_setup
+b33 x23 x22 turn_x move_x33_setup
+
+x11 x23 b22 turn_x move_x22_setup
+x11 b23 x22 turn_x move_x23_setup
+b11 x23 x22 turn_x move_x11_setup
+
+x11 x13 b21 turn_x move_x21_setup
+x11 b13 x21 turn_x move_x13_setup
+b11 x13 x21 turn_x move_x11_setup
+
+x11 x12 b31 turn_x move_x31_setup
+x11 b12 x31 turn_x move_x12_setup
+b11 x12 x31 turn_x move_x11_setup
+
+x11 x12 b32 turn_x move_x32_setup
+x11 b12 x32 turn_x move_x12_setup
+b11 x12 x32 turn_x move_x11_setup
+
+x31 x12 b32 turn_x move_x32_setup
+x31 b12 x32 turn_x move_x12_setup
+b31 x12 x32 turn_x move_x31_setup
+
+x31 x12 b33 turn_x move_x33_setup
+x31 b12 x33 turn_x move_x12_setup
+b31 x12 x33 turn_x move_x31_setup
+
+x13 x32 b33 turn_x move_x33_setup
+x13 b32 x33 turn_x move_x32_setup
+b13 x32 x33 turn_x move_x13_setup
+
+x12 x32 b33 turn_x move_x33_setup
+x12 b32 x33 turn_x move_x32_setup
+b12 x32 x33 turn_x move_x12_setup
+
+x12 x32 b31 turn_x move_x31_setup
+x12 b32 x31 turn_x move_x32_setup
+b12 x32 x31 turn_x move_x12_setup
+
+x11 x32 b31 turn_x move_x31_setup
+x11 b32 x31 turn_x move_x32_setup
+b11 x32 x31 turn_x move_x11_setup
+
+x11 x13 b23 turn_x move_x23_setup
+x11 b13 x23 turn_x move_x13_setup
+b11 x13 x23 turn_x move_x11_setup
+
+x11 x13 b21 turn_x move_x21_setup
+x11 b13 x21 turn_x move_x13_setup
+b11 x13 x21 turn_x move_x11_setup
+
+x31 x33 b23 turn_x move_x23_setup
+x31 b33 x23 turn_x move_x33_setup
+b31 x33 x23 turn_x move_x31_setup
+
+x31 x33 b21 turn_x move_x21_setup
+x31 b33 x21 turn_x move_x33_setup
+b31 x33 x21 turn_x move_x31_setup
+
+###### Can WIN
+#top o
+o11 b12 o13 turn_o move_o12_can_win
+b11 o12 o13 turn_o move_o11_can_win
+o11 o12 b13 turn_o move_o13_can_win
+
+#middle row o
+o21 b22 o23 turn_o move_o22_can_win
+b21 o22 o23 turn_o move_o21_can_win
+o21 o22 b23 turn_o move_o23_can_win
+
+#bottom middle row
+o31 b32 o33 turn_o move_o32_can_win
+b31 o32 o33 turn_o move_o31_can_win
+o31 o32 b33 turn_o move_o33_can_win
+
+#left column
+o11 b21 o31 turn_o move_o21_can_win
+b11 o21 o31 turn_o move_o11_can_win
+o11 o21 b31 turn_o move_o31_can_win
+
+#middle column
+o12 b22 o32 turn_o move_o22_can_win
+b12 o22 o32 turn_o move_o12_can_win
+o12 o22 b32 turn_o move_o32_can_win
+
+#right column
+o13 b23 o33 turn_o move_o23_can_win
+b13 o23 o33 turn_o move_o13_can_win
+o13 o23 b33 turn_o move_o33_can_win
+
+#left right diagonal
+o11 b22 o33 turn_o move_o22_can_win
+b11 o22 o33 turn_o move_o11_can_win
+o11 o22 b33 turn_o move_o33_can_win
+
+#right left diagonal
+o13 b22 o31 turn_o move_o22_can_win
+b13 o22 o31 turn_o move_o13_can_win
+o13 o22 b31 turn_o move_o31_can_win
+
+#top o
+o11 o12 o13 turn_x o_won
+o11 o12 o13 turn_x o_won
+o11 o12 o13 turn_x o_won
+
+#middle row o
+o21 o22 o23 turn_x o_won
+o21 o22 o23 turn_x o_won
+o21 o22 o23 turn_x o_won
+
+#oottom middle row
+o31 o32 o33 turn_x o_won
+o31 o32 o33 turn_x o_won
+o31 o32 o33 turn_x o_won
+
+#left column
+o11 o21 o31 turn_x o_won
+o11 o21 o31 turn_x o_won
+o11 o21 o31 turn_x o_won
+
+#middle column
+o12 o22 o32 turn_x o_won
+o12 o22 o32 turn_x o_won
+o12 o22 o32 turn_x o_won
+
+#right column
+o13 o23 o33 turn_x o_won
+o13 o23 o33 turn_x o_won
+o13 o23 o33 turn_x o_won
+
+#left right diagonal
+o11 o22 o33 turn_x o_won
+o11 o22 o33 turn_x o_won
+o11 o22 o33 turn_x o_won
+
+#right left diagonal
+o13 o22 o31 turn_x o_won
+o13 o22 o31 turn_x o_won
+o13 o22 o31 turn_x o_won
+
+#top x
+x11 b12 x13 turn_o move_o12_force
+b11 x12 x13 turn_o move_o11_force
+x11 x12 b13 turn_o move_o13_force
+
+#middle row x
+x21 b22 x23 turn_o move_o22_force
+b21 x22 x23 turn_o move_o21_force
+x21 x22 b23 turn_o move_o23_force
+
+#bottom middle row
+x31 b32 x33 turn_o move_o32_force
+b31 x32 x33 turn_o move_o31_force
+x31 x32 b33 turn_o move_o33_force
+
+#left column
+x11 b21 x31 turn_o move_o21_force
+b11 x21 x31 turn_o move_o11_force
+x11 x21 b31 turn_o move_o31_force
+
+#middle column
+x12 b22 x32 turn_o move_o22_force
+b12 x22 x32 turn_o move_o12_force
+x12 x22 b32 turn_o move_o32_force
+
+#right column
+x13 b23 x33 turn_o move_o23_force
+b13 x23 x33 turn_o move_o13_force
+x13 x23 b33 turn_o move_o33_force
+
+#left right diagonal
+x11 b22 x33 turn_o move_o22_force
+b11 x22 x33 turn_o move_o11_force
+x11 x22 b33 turn_o move_o33_force
+
+#right left diagonal
+x13 b22 x31 turn_o move_o22_force
+b13 x22 x31 turn_o move_o13_force
+x13 x22 b31 turn_o move_o31_force
+
+
+#####setup
+o11 o12 b21 turn_o move_o21_setup
+o11 b12 o21 turn_o move_o12_setup
+b11 o12 o21 turn_o move_o11_setup
+o11 o12 b22 turn_o move_o22_setup
+o11 b12 o22 turn_o move_o12_setup
+b11 o12 o22 turn_o move_o11_setup
+o11 o21 b22 turn_o move_o22_setup
+o11 b21 o22 turn_o move_o21_setup
+b11 o21 o22 turn_o move_o11_setup
+
+o13 o12 b21 turn_o move_o21_setup
+o13 b12 o21 turn_o move_o12_setup
+b13 o12 o21 turn_o move_o13_setup
+o13 o12 b22 turn_o move_o22_setup
+o13 b12 o22 turn_o move_o12_setup
+b13 o12 o22 turn_o move_o13_setup
+o13 o23 b22 turn_o move_o22_setup
+o13 b23 o22 turn_o move_o23_setup
+b13 o23 o22 turn_o move_o13_setup
+
+o31 o32 b21 turn_o move_o21_setup
+o31 b32 o21 turn_o move_o32_setup
+b31 o32 o21 turn_o move_o31_setup
+o31 o32 b22 turn_o move_o22_setup
+o31 b32 o22 turn_o move_o32_setup
+b31 o32 o22 turn_o move_o31_setup
+o31 o21 b22 turn_o move_o22_setup
+o31 b21 o22 turn_o move_o21_setup
+b31 o21 o22 turn_o move_o31_setup
+
+o31 o32 b21 turn_o move_o21_setup
+o31 b32 o21 turn_o move_o32_setup
+b31 o32 o21 turn_o move_o31_setup
+o31 o32 b22 turn_o move_o22_setup
+o31 b32 o22 turn_o move_o32_setup
+b31 o32 o22 turn_o move_o31_setup
+o31 o23 b22 turn_o move_o22_setup
+o31 b23 o22 turn_o move_o23_setup
+b31 o23 o22 turn_o move_o31_setup
+
+o31 o23 b22 turn_o move_o22_setup
+o31 b23 o22 turn_o move_o23_setup
+b31 o23 o22 turn_o move_o31_setup
+
+o13 o23 b22 turn_o move_o22_setup
+o13 b23 o22 turn_o move_o23_setup
+b13 o23 o22 turn_o move_o13_setup
+
+o33 o23 b22 turn_o move_o22_setup
+o33 b23 o22 turn_o move_o23_setup
+b33 o23 o22 turn_o move_o33_setup
+
+o11 o23 b22 turn_o move_o22_setup
+o11 b23 o22 turn_o move_o23_setup
+b11 o23 o22 turn_o move_o11_setup
+
+o11 o13 b21 turn_o move_o21_setup
+o11 b13 o21 turn_o move_o13_setup
+b11 o13 o21 turn_o move_o11_setup
+
+o11 o12 b31 turn_o move_o31_setup
+o11 b12 o31 turn_o move_o12_setup
+b11 o12 o31 turn_o move_o11_setup
+
+o11 o12 b32 turn_o move_o32_setup
+o11 b12 o32 turn_o move_o12_setup
+b11 o12 o32 turn_o move_o11_setup
+
+o31 o12 b32 turn_o move_o32_setup
+o31 b12 o32 turn_o move_o12_setup
+b31 o12 o32 turn_o move_o31_setup
+
+o31 o12 b33 turn_o move_o33_setup
+o31 b12 o33 turn_o move_o12_setup
+b31 o12 o33 turn_o move_o31_setup
+
+o13 o32 b33 turn_o move_o33_setup
+o13 b32 o33 turn_o move_o32_setup
+b13 o32 o33 turn_o move_o13_setup
+
+o12 o32 b33 turn_o move_o33_setup
+o12 b32 o33 turn_o move_o32_setup
+b12 o32 o33 turn_o move_o12_setup
+
+o12 o32 b31 turn_o move_o31_setup
+o12 b32 o31 turn_o move_o32_setup
+b12 o32 o31 turn_o move_o12_setup
+
+o11 o32 b31 turn_o move_o31_setup
+o11 b32 o31 turn_o move_o32_setup
+b11 o32 o31 turn_o move_o11_setup
+
+o11 o13 b23 turn_o move_o23_setup
+o11 b13 o23 turn_o move_o13_setup
+b11 o13 o23 turn_o move_o11_setup
+
+o11 o13 b21 turn_o move_o21_setup
+o11 b13 o21 turn_o move_o13_setup
+b11 o13 o21 turn_o move_o11_setup
+
+o31 o33 b23 turn_o move_o23_setup
+o31 b33 o23 turn_o move_o33_setup
+b31 o33 o23 turn_o move_o31_setup
+
+o31 o33 b21 turn_o move_o21_setup
+o31 b33 o21 turn_o move_o33_setup
+b31 o33 o21 turn_o move_o31_setup

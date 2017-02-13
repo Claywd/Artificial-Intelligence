@@ -1,0 +1,164 @@
+Graph.cpp
+void Graph::insertVertex(int id, int x, int y) {
+
+	map[x][y]=id;
+
+	Vertex* vrtx = new Vertex(i, false);
+	DListNode<Vertex>* elem = new DListNode<Vertex>(i,*vrtx);
+	//this.coordinates[x][y] = elem;;
+
+}
+
+void Graph::insertEdge(int id, vector<int> edgelist) {
+  if(curEdges >= e){
+    throw GraphException("edge number is not correct!");
+  }
+
+	// store edges in a vector of edges for each node
+	//AdjacencyList[id].edges.push_back(newEdge);
+
+	for (int i =0; i<*AdjacencyList[id]->edges.size(); ++i){
+		Edge* newEdge = new Edge(id,edgelist[i], 1);
+		*AdjacencyList[id]->edges.push_back(newEdge);
+	}
+  
+  curEdges++; 
+  return;
+}
+
+
+void Graph::sortEdge(){
+	int n = EdgeList.size();
+	for (int k = 1; k < n; k++ ){  //insertion sort
+		Edge* tmp = EdgeList[k];   //a better sorting algorithm could be used to 
+		int j = k;				   //decrease the run time
+		for( ; j > 0 && tmp->weight < EdgeList[j-1]->weight; j--)
+			EdgeList[j] = EdgeList[j-1];
+		EdgeList[j] = tmp;
+	}
+}
+
+
+Graph.h
+class Edge {
+public:
+  int vertex_i, vertex_j;
+  double weight;
+  Edge(int i, int j, double w) {vertex_i=i; vertex_j=j; weight=w;}
+};
+
+class Vertex {
+public:
+  int id;
+  Edge* edge = NULL;
+  vector<Edge*> edges;
+  Vertex(int i, bool a): id(i) visited(a) {}
+};
+  
+struct GraphException : public exception {
+  GraphException(){}
+  GraphException(const string &message){
+    msg = "Graph exception:" + message;
+  }
+  const char* what() const noexcept{
+    return msg.c_str();
+  }
+
+  string msg;
+};
+
+class Graph {
+public:
+  int n, e;     // |V|, |E|
+
+  int map[20][20][20];
+  
+  vector<DListNode<Vertex>*> AdjacencyList;
+  vector<Edge*> EdgeList;
+
+public:
+  Graph() {}
+  void insertVertex(int id, int x, int y);
+  void insertEdge(int id, vector<int> edgelist);
+  double getWeight(int i, int j);
+  void sortEdge();     //Sort the weight of edges from small to large
+  void getData(string file);  //
+  void displayMST(vector<Edge*> List) {
+    cout<<"The Minimum Spanning Tree is: "<<endl;
+    cout<<"Node  Node  Weight"<<endl;
+    for (int i=0; i<(n-1); i++) {
+      cout<<setw(3)<<List[i]->vertex_i;
+      cout<<setw(6)<<List[i]->vertex_j;
+      cout<<setw(7)<<List[i]->weight<<endl;
+    }
+  }
+};
+
+
+
+inline ostream& operator<<(ostream &os, Graph &A) {
+  cout<<"The Adjacency Matrix of the Graph is:"<<endl;
+  for (int i=0;i<A.n;i++) {
+    for (int j=0;j<A.n;j++)
+      cout<<setw(5)<<A.getWeight(i,j);
+    cout<<endl;
+  }
+}
+
+			// if (buf == "v" || buf == "e"){
+			// 	if (buf == "v"){
+			// 			if (!lines){
+            //                 if (!check1){
+            //                     cout<<"gotV\n";
+			// 					n = n+1;
+			// 					lines =true;
+            //                     check1= false;
+			// 					nodeType = 'v';
+            //                 }
+            //                 else{
+            //                     cout<<"here is the data "<<dataID<<" "<<num[0]<< " "<< num[1]<<"\n";
+            //                     //insertVertex(dataID, num[0], num[1]);								
+			// 					n = n+1;
+			// 					num.erase(num.begin(), num.end());
+			// 					lines = true;
+			// 					nodeType = 'v';
+            //                 }
+                            
+			// 			}
+			// 	}
+			// 	else if (buf == "e"){
+			// 				if (!lines){
+			// 					if (!check){
+			// 						check = true;
+			// 						n =n+1;
+            //                         cout<<"lastV\n";
+            //                         cout<<dataID<<" "<<num[0]<< " "<< num[1]<<"\n";
+			// 						// insertVertex(dataID, num[0], num[1]);
+			// 						num.erase(num.begin(), num.end());
+			// 						lines=true;
+			// 						nodeType = 'e';
+			// 					}
+			// 					else{
+                                    
+			// 						//insertEdge(dataID, num);
+			// 						e = e+1;
+			// 						num.erase(num.begin(), num.end());
+			// 						lines = true;
+			// 						nodeType = 'e';
+			// 					}
+			// 			}
+			// 	}
+			// }
+			// else{
+			// 	if (lines){ 
+            //         cout<<"got ID\n";
+			// 		lines = false;
+			// 		stringstream(buf) >> dataID;
+			// 	}
+			// 	else{
+            //         cout<<"got coordinate "<<count<<"\n";
+			// 		stringstream(buf)>>test;
+			// 		num.push_back(test);
+            //         ++count;				
+			// 	}
+			// }
